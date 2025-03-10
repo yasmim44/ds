@@ -1,0 +1,33 @@
+<script>
+    let veiculos = [];
+    let aereo = [];
+    let aquatico = [];
+    let terrestre = [];
+
+    let continuar = 'sim';
+
+    while(continuar == 'sim'){
+        aereo.push(prompt('digite um veiculo aereo:'));
+        continuar = prompt('deseja cadastrar outro aereo?');
+ }
+    continuar = 'sim';
+    while(continuar == 'sim'){
+        aquatico.push(prompt('digite um veiculo aquatico:'));
+        continuar = prompt('deseja cadastrar outro aquatico?');
+ }
+
+    continuar = 'sim';
+    while(continuar == 'sim'){
+        terrestre.push(prompt('digite um veiculo terrestre:'));
+        continuar = prompt('deseja cadastrar outro terrestre?');
+ }
+
+
+  veiculos.push(aereo);
+  veiculos.push(aquatico);
+  veiculos.push(terrestre);
+  console.log(veiculos);
+
+
+
+</script>

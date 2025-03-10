@@ -1,0 +1,13 @@
+<script>
+    let veiculos = [];
+    let continuar = 'sim';
+
+    while(continuar == 'sim') {
+        veiculos.push(prompt('Digite um veiculo:'));
+        continuar = prompt('Deseja adicionar  mais algum veiculo? sim/não');
+    }
+    console.log('Veículos inseridos');
+    veiculos.forEach(function(vei){
+        console.log(vei);
+    })
+</script>

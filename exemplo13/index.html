@@ -1,0 +1,30 @@
+<script>
+    let numeros = [
+        '99',
+        '14',
+        '37',
+        '46',
+        '45',
+        '61',
+        '98',
+        '81',
+        '6',
+        '450'
+    ];
+    let num = prompt("Digite um número");  
+    let encontrou = false;  
+
+    for (let index = 0; index < numeros.length; index++) {
+        console.log(numeros[index]);  
+        if (num == numeros[index]) {  
+            encontrou = true; 
+            break;  
+        }
+    }
+
+    if (encontrou) {
+        alert("Número encontrado");
+    } else {
+        alert("Número não encontrado");
+    }
+</script>

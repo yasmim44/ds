@@ -1,0 +1,13 @@
+<script>
+
+let input = prompt("Digite uma lista de números separados por espaço:");
+
+// Converte a entrada em um array de números
+let numeros = input.split(' ').map(Number);
+
+// Ordena a lista em ordem crescente
+numeros.sort((a, b) => a - b);
+
+console.log("Lista ordenada:", numeros);
+
+</script>
