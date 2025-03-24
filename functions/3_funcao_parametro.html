@@ -1,0 +1,44 @@
+<script>
+    let operacao;
+    let valor_1, valor_2;
+    let resultado;
+
+    function setValor1() {
+        valor_1 = Number(prompt("digite o primeiro valor"));
+    }
+
+
+    function setValor2() {
+        valor_2 = Number(prompt("digite o segundo valor"));
+    }
+
+
+    function setOperacao() {
+        operacao = prompt("digite a operacao: +, -, /, *");
+    }
+
+    function setCalculete() {
+        if (operacao === '+') {
+            resultado = valor_1 + valor_2;
+        } else if (operacao === '-') {
+            resultado = valor_1 - valor_2;
+        } else if (operacao === '/') {
+            resultado = valor_1 / valor_2;
+        } else if (operacao === '*') {
+            resultado = valor_1 * valor_2;
+        } else {
+            resultado = "Operação inválida";
+        }
+    }
+
+    function setShowResult() {
+        alert(`${valor_1} ${operacao} ${valor_2} = ${resultado}`);
+    }
+
+
+    setValor1();
+    setValor2();
+    setOperacao();
+    setCalculete();
+    setShowResult();
+</script>
