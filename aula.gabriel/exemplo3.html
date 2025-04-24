@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 3</title>
+</head>
+<body>
+    <script>
+        // Função que conta quantas vezes uma letra aparece em uma palavra
+        function contLetras(palavra, letra) {
+            var contador = 0;
+            palavra = palavra.toLowerCase();  // Convertendo a palavra para minúscula
+
+            for (var i = 0; i < palavra.length; i++) {
+                if (palavra.charAt(i) == letra) {  // Verifica se o caractere atual é igual à letra
+                    contador++;
+                }
+            }
+
+            return contador;
+        }
+
+        // Solicita ao usuário a palavra e a letra a ser contada
+        var palavra = prompt("Insira uma palavra: ");
+        var letra = prompt("Insira uma letra específica: ");
+
+        // Chama a função para contar a quantidade de letras
+        var resultado = contLetras(palavra, letra);
+
+        // Exibe o resultado
+        alert("A palavra possui " + resultado + " letras iguais a '" + letra + "'.");
+    </script>
+</body>
+</html>
