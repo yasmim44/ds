@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisiçao de API</title>
+</head>
+<body>
+    <style>
+        button{
+            color: rgb(238, 14, 126);
+            background-color: rgb(243, 147, 195);
+            border-radius: 10%;
+            box-shadow: 2px 5px 5px;
+        }
+        input{
+            border-radius: 10%;
+            box-shadow: 2px 5px 5px;
+            color:  rgb(238, 14, 126);
+            background-color: rgb(255, 226, 244);
+        }
+        
+    </style>
+    <input type="text" id="input-search">
+    <button onclick="getCountry()">Consultar País</button>
+    <script>
+        function getCountry(){
+            let input_search = document.querySelector("#input-search");
+            let country = input_search.value;
+            let url =  `https://restcountries.com/v3.1/name/${country}`;
+
+            fetch(url)
+            .then(resp => resp.json())
+            .then(dados => { console.log(dados) })
+            .catch(erro => { console.log(erro) })
+            .finally(() => { console.log("Requisição Finalizada") })
+        }
+    </script>
+</body>
+</html>
