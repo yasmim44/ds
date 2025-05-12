@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Consulta Paises</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="shortcut icon" href="brasil.png" type="image/x-icon">
   </head>
   <body>
 
@@ -32,6 +33,7 @@
         .then(resp => resp.json())
         .then(resp => {
             resp.forEach(country => {
+               console.log(country);
                let img = document.createElement('img');
                img.setAttribute('src', country.flags.svg);
                img.style.width = '100%';
@@ -47,19 +49,57 @@
                capital.innerText = country.capital;
 
                let population = document.createElement('p')
-               population.innerText = country.population;
+               population.innerText = 'População: '+ country.population;
 
+
+               
+               let link = document.createElement('a');
+               link.setAttribute('href', country.maps.googleMaps);
+               link.innerText = 'Mapa';
+               
+               let continents = document.createElement('p')
+               continents.innerText = country.continents;
+               
+               let region = document.createElement('p');
+               region.innerText = country.region;
+               
+               let subregion = document.createElement('p');
+               subregion.innerText = country.subregion;
+               
+               let border = document.createElement('p');
+               border.innerText = country.borders;
+               
+               let independent = document.createElement('p');
+               independent.innerHTML = '<strong>O país é independente?</strong> ' + (country.independent ? 'Sim' : 'Não');
+
+               
+               let coatOfArms = document.createElement('img');
+               coatOfArms.setAttribute('src', country.coatOfArms.png); 
+               coatOfArms.style.width = '100%';
+               coatOfArms.style.borderRadius = '8px';
+
+               let timezones = document.createElement('p');
+               timezones.innerText = country.timezones;
 
                let col = document.createElement('div');
                col.classList.add("col-4");
 
                
+               
                col.appendChild(img);
                col.appendChild(title);
-               col.appendChild(subtitle)
-               col.appendChild(capital)
-               col.appendChild(population)
+               col.appendChild(subtitle);
+               col.appendChild(capital);
+               col.appendChild(population);
                countries_list.appendChild(col);
+               col.appendChild(link);
+               col.appendChild(continents);
+               col.appendChild(region);
+               col.appendChild(subregion);
+               col.appendChild(border);
+               col.appendChild(independent);
+               col.appendChild(coatOfArms);
+               col.appendChild(timezones);
             });
         })
         .catch(erro => {
