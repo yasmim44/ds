@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>documento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+    <div class="container-fluid">
+        <div class="row" id="box"></div>
+        <div class="col-4"></div>
+    </div>
+
+    <script>
+        let box = document.querySelector('#box');
+
+        let veiculos = [
+            {
+               modelo: 'uno',
+               ano: 1997,
+               combustivel:'flex',
+               cor: 'cinza',
+               cilindradas: '1000cc',
+               quilometragem: '100 mil',
+               valor_a_vista: 200.000,
+               marca: 'Fiat',
+               fotos: [
+                    'https://cdn.autopapo.com.br/box/uploads/2021/08/02210509/fiat_uno_mille_economy_5-cinza_de_frente_fazendo_curva.jpg'
+               ]
+
+            },
+            {
+               modelo: 'onix',
+               ano: 2009,
+               combustivel:'flex',
+               cor: 'branco',
+               cilindradas: '1000cc',
+               quilometragem: '100 mil',
+               valor_a_vista: 200.000,
+               marca: 'Chevrolet',
+               fotos: [
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYLatEMC2MG8kWNV6J45BYjBaTjh21yOgW_g&s'
+               ]
+
+            },
+            {
+               modelo: 'fox',
+               ano: 1997,
+               combustivel:'flex',
+               cor: 'vermelho',
+               cilindradas: '1000cc',
+               quilometragem: '100 mil',
+               valor_a_vista: 200.000,
+               marca: 'Volkswagen',
+               fotos: [
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Lbp7Prt9QdRUySGg2SZSXTOgjBA2FK90zQ&s'
+               ]
+
+            }
+        ];
+
+        veiculos.forEach(veiculo => {
+            let modelo = document.createElement('H1');
+            modelo.style.fontSize = '36px';
+            modelo.style.color = 'gray';
+            modelo.style.textTransform = 'upperCase';
+            modelo.innerText = veiculo.modelo;
+
+            let card = document.createElement('div');
+            card.classList.add('card');
+
+            let col = document.createElement('div');
+            col.classList.add('col-4');
+
+            let ano = document.createElement('strong');
+            ano.style.color = 'lightblue';
+            ano.style.fontSize = '20px';
+            ano.style.textTransform = 'upperCase';
+            ano.innerText = veiculo.ano;
+
+            let combustivel = document.createElement('div');
+            combustivel.style.color = 'lightgreen';
+            combustivel.style.fontSize = '20px';
+            combustivel.style.textTransform = 'upperCase';
+            combustivel.innerText = veiculo.combustivel;
+
+            card.appendChild(modelo);
+            col.appendChild(card);
+            box.appendChild(col);
+            card.appendChild(ano);
+            card.appendChild(combustivel)
+        });
+
+        
+    </script>''
+</body>
+</html>
