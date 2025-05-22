@@ -84,6 +84,15 @@
                let col = document.createElement('div');
                col.classList.add("col-4");
 
+               let maps = document.createElement('iframe');
+               maps.setAttribute('src', 'https://www.google.com/maps?q=-15.79,-47.88&hl=pt-BR&z=6&output=embed');
+               maps.style.width="600" 
+               maps.style.height="450" 
+               maps.style.style="border:0;" 
+               maps.style.allowfullscreen="" 
+               maps.style.loading="lazy"
+               maps.style.referrerpolicy="no-referrer-when-downgrade"
+
                
                
                col.appendChild(img);
@@ -100,6 +109,7 @@
                col.appendChild(independent);
                col.appendChild(coatOfArms);
                col.appendChild(timezones);
+               col.appendChild(maps)
             });
         })
         .catch(erro => {
