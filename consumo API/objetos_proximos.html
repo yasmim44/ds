@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Proximos</title>
+    <link rel="shortcut icon" href="meteoro.png" type="image/x-icon">
+</head>
+<body>
+    <script>
+        fetch('https://api.nasa.gov/neo/rest/v1/feed?start_date=2025-05-20&end_date=2025-05-26&api_key=DEMO_KEY')
+  .then(response => response.json())
+  .then(data => {
+    const nearEarthObjects = data.near_earth_objects;
+    for (let date in nearEarthObjects) {
+      nearEarthObjects[date].forEach(obj => {
+        document.body.innerHTML += `
+          <h5>${obj.name}</h5>
+          <p>Data: ${date}</p>
+          <p>Diâmetro: ${obj.estimated_diameter.meters.estimated_diameter_max.toFixed(2)} metros</p>
+          <hr/>
+        `;
+      });
+    }
+  })
+  .catch(error => console.error(error));
+
+    </script>
+</body>
+</html>

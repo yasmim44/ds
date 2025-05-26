@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imagens da terra</title>
+    <link rel="shortcut icon" href="planeta-terra.png" type="image/x-icon">
+</head>
+<body>
+    <script>
+        fetch('https://api.nasa.gov/EPIC/api/natural/images?api_key=DEMO_KEY')
+  .then(response => response.json())
+  .then(data => {
+    data.slice(0, 5).forEach(item => {
+      const date = item.date.split(' ')[0].replace(/-/g, '/');
+      const imageUrl = `https://epic.gsfc.nasa.gov/archive/natural/${date}/png/${item.image}.png`;
+      document.body.innerHTML += `
+        <h5>${item.caption}</h5>
+        <img src="${imageUrl}" class="img-fluid"/>
+        <p>${item.date}</p>
+        <hr/>
+      `;
+    });
+  })
+  .catch(error => console.error(error));
+
+    </script>
+</body>
+</html>

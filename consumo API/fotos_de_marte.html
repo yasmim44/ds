@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foto de marte</title>
+    <link rel="shortcut icon" href="marte.png" type="image/x-icon">
+</head>
+<body>
+    <script>
+        fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY')
+  .then(response => response.json())
+  .then(data => {
+    data.photos.slice(0, 10).forEach(photo => {
+      document.body.innerHTML += `
+        <h5>${photo.camera.full_name}</h5>
+        <img src="${photo.img_src}" class="img-fluid"/>
+        <p>${photo.earth_date}</p>
+        <hr/>
+      `;
+    });
+  })
+  .catch(error => console.error(error));
+
+
+    </script>
+</body>
+</html>
