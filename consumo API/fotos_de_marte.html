@@ -8,7 +8,8 @@
 </head>
 <body>
     <script>
-        fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY')
+        fetch('https://api.nasa.gov/EPIC/api/natural/images?api_key=3h2DhEsaPUEkodlXzTVs8JKrpOcWFBqdTz8LdeZB')
+
   .then(response => response.json())
   .then(data => {
     data.photos.slice(0, 10).forEach(photo => {
@@ -21,6 +22,15 @@
     });
   })
   .catch(error => console.error(error));
+  const dadosDeTeste = [
+  {
+    date: "2024-05-10 00:00:00",
+    image: "epic_1b_20240510000000",
+    caption: "Imagem de teste da Terra"
+  },
+  // ... mais objetos
+];
+
 
 
     </script>

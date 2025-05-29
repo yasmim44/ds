@@ -5,9 +5,37 @@
   <title>CosmoVisão</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="shortcut icon" href="saturno.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+  <style>
+    img.centralizada {
+      display: block;
+      margin: 0 auto;
+      max-width: 1000px;
+      width: 600%; 
+      border-radius: 10%;
+    }
+
+    body {
+      background-color: rgb(212, 143, 221);
+      font-family: system-ui, sans-serif;
+    }
+    h1 {
+      font-family: 'Berkshire Swash', serif;
+      color: rgb(123, 78, 129);
+    }
+    p{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      color: rgb(123, 78, 129);
+    }
+    h1:hover {
+    color: rgb(93, 48, 102);
+    cursor: pointer; /* opcional, muda o cursor para indicar que é interativo */
+}
+  </style>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">NASA Explorer</a>
   <div class="collapse navbar-collapse">
@@ -20,10 +48,13 @@
   </div>
 </nav>
 
-<div class="container text-center my-9">
+<div class="container text-center my-5">
   <h1>Bem-vindo a CosmoVisão!</h1>
   <p>Veja as maravilhas do universo através das APIs da NASA!</p>
 </div>
 
+<img src="https://i.pinimg.com/736x/ee/06/fe/ee06fe901feae88c7f05370f4f2f5abf.jpg" alt="Imagem do Universo" class="centralizada">
+
 </body>
 </html>
+
