@@ -1,0 +1,60 @@
+<script>
+    class Pessoa {
+        constructor(nome, idade, cpf){
+            this.nome = nome;
+            this.idade = idade;
+            this.cpf = cpf;
+        }
+
+        falar(){
+            console.log('Olá!');
+        }
+        andar(){
+            console.log('A pessoa andou!');
+        }
+    }
+
+    let aluno = new Pessoa('yasmim', '16', '123.456-78');
+    console.log(aluno.nome);
+    console.log(aluno.idade);
+    console.log(aluno.cpf);
+    console.log(aluno.falar());
+    console.log(aluno.andar());
+
+
+    class Usuario {
+        constructor(nome, tipo, email, senha, status) {
+            this.nome = nome;     
+            this.tipo = tipo;
+            this.email = email;
+            this.senha = senha;
+            this.status = status;
+        }
+
+        conectar() {
+            console.log('Usuario conectado');
+        }
+
+        recuperSenha() {
+            console.log('E-mail de recuperaçao enviado!');
+        }
+
+        trocarSenha(){
+            console.log('Senha atualizada!')
+        }
+
+        alterarTipo(){
+            console.log('Conta trocada');
+        }
+    }
+
+  
+    let admin = new Usuario('Yasmim', 'admin', 'yasmim@exemplo.com', '123' ,'online');
+    console.log(admin.nome);
+    console.log(admin.tipo);
+    console.log(admin.email);
+    console.log(admin.senha);
+    console.log(admin.status);
+
+
+</script>
