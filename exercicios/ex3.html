@@ -1,0 +1,82 @@
+<script>
+    class Juridica {
+        constructor(cnpj, telefone) {
+            this._cnpj = cnpj;
+            this._telefone = telefone;
+        }
+        get cnpj() {
+            return this._cnpj;
+        }
+    
+        set cnpj(value) {
+            this._cnpj = value;
+        }
+
+        get telefone() {
+            return this._telefone;
+        }
+    
+        set telefone(value) {
+            this._telefone = value;
+        }
+    }
+    
+    class Fisica {
+        constructor(cpf, telefone) {
+            this._cpf = cpf;
+            this._telefone = telefone;
+        }
+
+        get cpf() {
+            return this._cpf;
+        }
+    
+        set cpf(value) {
+            this._cpf = value;
+        }
+
+        get telefone() {
+            return this._telefone;
+        }
+    
+        set telefone(value) {
+            this._telefone = value;
+        }
+    }
+    
+    class Empresario extends Juridica {
+        constructor(nome, email, cnpj, telefone) {
+            super(cnpj, telefone); 
+            this._nome = nome;
+            this._email = email;
+        }
+    
+        get nome() {
+            return this._nome;
+        }
+    
+        set nome(value) {
+            this._nome = value;
+        }
+
+        get email() {
+            return this._email;
+        }
+    
+        set email(value) {
+            this._email = value;
+        }
+    
+        exibirDados() {
+            console.log(`Nome: ${this._nome}`);
+            console.log(`Email: ${this._email}`);
+            console.log(`CNPJ: ${this._cnpj}`);
+            console.log(`Telefone: ${this._telefone}`);
+        }
+    }
+    
+    let empresaria_1 = new Empresario('Yasmim Martins', 'yasbombom@empresa.com', '12.345.678/0001-90', '(15)99699999');
+    
+
+    empresaria_1.exibirDados();
+</script>

@@ -1,0 +1,56 @@
+<script>
+    class ContaBancaria {
+        constructor(titular, numeroConta, saldo = 0) {
+            this.titular = titular;
+            this._numeroConta = numeroConta;
+            this.saldo = saldo;
+        }
+
+        set titularConta(titular) {
+            this.titular = titular;
+        }
+        get titularConta() {
+            return this.titular;
+        }
+
+        set saldoConta(saldo) {
+            this.saldo = saldo;
+        }
+        get saldoConta() {
+            return this.saldo;
+        }
+
+        set numeroConta(numeroConta) {
+            this._numeroConta = numeroConta;
+        }
+        get numeroConta() {
+            return this._numeroConta;
+        }
+
+        depositar(valor) {
+            this.saldo += valor;
+        }
+
+        sacar(valor) {
+            if (valor <= this.saldo) {
+                this.saldo -= valor;
+            } else {
+                console.log("Saldo insuficiente");
+            }
+        }
+
+        exibirSaldo() {
+            console.log(`Saldo: R$${this.saldo}`);
+        }
+    }
+
+    let contaExemplo = new ContaBancaria('Yasmim', '12345-6', 1000);
+
+    console.log(`Titular: ${contaExemplo.titularConta}`);
+    console.log(`Número da Conta: ${contaExemplo.numeroConta}`);
+    contaExemplo.exibirSaldo(); 
+
+    contaExemplo.depositar(200);
+    contaExemplo.sacar(100);
+    contaExemplo.exibirSaldo();
+</script>
